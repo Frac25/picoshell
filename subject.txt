@@ -1,0 +1,25 @@
+assignement name : picoshell
+expected dile : picoshell.c
+Allowed fonction : close, fork, wait, exit, execvp, dup2, pipe
+
+write the following fonction:
+int picoshell(char** cmds[]);
+
+the goal of this fonction is to execute a pipeline. It must execute each command
+of cmds and connect the output of one ti the input of the next command (just like a shell).
+
+...
+
+if any fork/dup2/pipe error occure, the fonction  must return 1 (you must of course
+close all the open fds before). otherwise the fonction must wait all child process and
+return 0, even if the execution resulted in an error.
+
+you will find a main.c to help you
+
+...
+
+this should work :
+./picoshell /bin/ls "|" /usr/bin/grep picoshell
+picoshell
+./picochell echo 'squalala!' "|" cat "|" sed 's/a/b/g'
+squblblb!
