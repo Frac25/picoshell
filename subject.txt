@@ -21,5 +21,7 @@ you will find a main.c to help you
 this should work :
 ./picoshell /bin/ls "|" /usr/bin/grep picoshell
 picoshell
-./picochell echo 'squalala!' "|" cat "|" sed 's/a/b/g'
+./picoshell echo 'squalala!' "|" cat "|" sed 's/a/b/g'
 squblblb!
+
+Hints : do not leak file descriptor.
